@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>Connect +254</h1>
+        </div>
+        <div class="content">
+            <div class="down">
+                <a [routerLink]="['home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+            </div>
+            <div class="down">
+                <a [routerLink]="['educate']" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">Educate</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Views</button>
+                <div class="dropdown-content">
+                    <a [routerLink]="['all-views']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}">All Views</a>
+                    <a [routerLink]="['my-views']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">My
+                        Views</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Incidents</button>
+                <div class="dropdown-content">
+                    <a [routerLink]="['all-incidents']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}">All Incidents</a>
+                    <a [routerLink]="['my-incidents']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}">My Incidents</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Polls</button>
+                <div class="dropdown-content">
+                    <a [routerLink]="['all-polls']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}">Polls</a>
+                    <a [routerLink]="['create-polls']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}">create Polls</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Register</button>
+                <div class="dropdown-content">
+                    <a [routerLink]="['login']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}">Login</a>
+                    <a [routerLink]="['logout']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}">LogOut</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

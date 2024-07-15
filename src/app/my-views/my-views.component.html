@@ -1,0 +1,39 @@
+<div class="home">
+    <h2>Add Your View</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+        <div class="container2">
+            <div>
+                <input class="name" formControlName="Title" type="text" placeholder="Title.."><br>
+                <span *ngIf="form.get('Title')?.invalid && form.get('Title')?.touched"><i>Title is required.</i></span>
+            </div>
+            <div>
+                <input class="name" formControlName="Image" type="text" placeholder="Image Url"><br>
+                <div *ngIf="form.get('Image')?.invalid && form.get('Image')?.touched" class="span">
+                    <p *ngIf="form.get('Image')?.hasError('required')"><i>Image is Required.</i></p>
+                    <p><i>Image Url is not valid.</i></p>
+                </div>
+            </div>
+            <div>
+                <textarea class="name" formControlName="Description" placeholder="Description"></textarea><br>
+                <div *ngIf="form.get('Description')?.invalid && form.get('Description')?.touched" class="span">
+                    <p *ngIf="form.get('Description')?.hasError('required')"><i>Description is Required.</i></p>
+                    <p><i>Description must contain at least 10 characters</i></p>
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" [disabled]="form.invalid">Add View</button>
+    </form>
+</div>
+
+<div class="container10" *ngIf="views?.length">
+    <h1>MY VIEWS</h1>
+    <div class="container11" *ngFor="let view of views">
+        <!-- <p>{{view.Username}}</p> -->
+        <p>{{view.Title}}</p>
+        <p>{{view.Image}}</p>
+        <p>{{view.Description}}</p>
+        <button (click)="deleteView(view.Id)">Delete</button>
+    </div>
+</div>

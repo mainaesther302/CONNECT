@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="home">
+        <h2>Join Us</h2>
+    
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+            <div class="container2">
+                <div >
+                    
+                    <input class="name" formControlName="Username" type="text" placeholder="Username"><br>
+                    <span *ngIf="form.get('Username')?.invalid && form.get('Username')?.touched"><i>Username is required.</i></span>
+                </div>
+                <div>
+                   
+                    <input class="name" formControlName="Email" type="email" placeholder="Email"><br>
+                    <div *ngIf="form.get('Email')?.invalid && form.get('Email')?.touched" class="span">
+                        <p *ngIf="form.get('Email')?.hasError('required')"><i>Email is Required.</i></p>
+                        <p><i>Email is not valid.</i></p>
+    
+                    </div>
+                </div>
+                <div>
+                    
+                    <input class="name" formControlName="Password" placeholder="Password"><br>
+                    <div *ngIf="form.get('Password')?.invalid && form.get('Password')?.touched" class="span">
+                        <p *ngIf="form.get('Password')?.hasError('required')"><i>Password is Required.</i></p>
+                        <p><i>Password must contain atleast 8 characters</i></p>
+    
+                    </div>
+                    
+                </div>
+            </div>
+                <div class="terms">
+                    <input type="checkbox" formControlName="TermsAndConditions">
+                    <label for="TermsAndConditions" >Terms and Conditions</label><br>
+                    <span *ngIf="form.get('TermsAndConditions')?.invalid"><i>Must agree to Terms and conditions</i></span>
+                </div>
+            
+    
+            <button type="submit" [disabled]="form.invalid">Sign Up</button>
+    
+        
+            <p class="footers">All ready have an account?<a href="#"><i>Login</i></a></p>
+       
+        </form>
+    </div>
+    
+    
+</body>
+</html>

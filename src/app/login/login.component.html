@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="home">
+        <h2>Log In</h2>
+    
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+            <div class="container2">
+                <div>
+                   
+                    <input class="name" formControlName="Email" type="email" placeholder="Email"><br>
+                    <div *ngIf="form.get('Email')?.invalid && form.get('Email')?.touched" class="span">
+                        <p *ngIf="form.get('Email')?.hasError('required')"><i>Email is Required.</i></p>
+                        <p><i>Email is not valid.</i></p>
+    
+                    </div>
+                </div>
+                <div>
+                    
+                    <input class="name" formControlName="Password" placeholder="Password"><br>
+                    <div *ngIf="form.get('Password')?.invalid && form.get('Password')?.touched" class="span">
+                        <p *ngIf="form.get('Password')?.hasError('required')"><i>Password is Required.</i></p>
+                        <p><i>Password must contain atleast 8 characters</i></p>
+    
+                    </div>
+                    
+                </div>
+            
+            <div >
+                
+                <select class="names" formControlName="Role" >
+                    <option value="" >Select Role</option>
+                    <option value="User" >User</option>
+                    <option value="Official">Official</option>
+                    <option value="Admin">Admin</option>
+                </select><br>
+                <span *ngIf="form.get('Role')?.invalid && form.get('Role')?.touched"><i>Role is required.</i></span>
+              </div>
+            
+            </div>
+            <button type="submit" [disabled]="form.invalid">Log In</button>
+    
+        
+            <p class="footers">Dont have an Account?<a href="#"><i>SignUp</i></a></p>
+       
+        </form>
+    </div>
+    
+    
+</body>
+</html>

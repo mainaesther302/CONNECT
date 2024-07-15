@@ -1,0 +1,54 @@
+
+        body {
+            background-color: white;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            width:100vw;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-radius: 40px;
+            border-collapse: collapse;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color:rgb(31, 117, 254)
+        }
+        th, td {
+            border: 0.5px solid rgb(31, 117, 254) ;
+            padding: 8px;
+        }
+        th {
+            background-color: rgb(31, 117, 254);
+        }
+        .tableData {
+            background-color: rgb(179, 205, 246);
+            color: black;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .actions button {
+            border: none;
+            padding: 5px 10px;
+            background-color: rgb(31, 117, 254);
+            color: white;
+            border-radius: 7px;
+            margin-left: 5px;
+        }
+@media screen and (max-width: 480px) {
+    body{
+        width:100vw;
+    }
+    table {
+        width: 70%;
+    }
+    h1{
+        text-align: center;
+    }
+
+
+}

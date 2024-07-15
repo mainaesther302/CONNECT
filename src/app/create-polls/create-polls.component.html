@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Polls</title>
+</head>
+<body>
+    <div class="home">
+        <h2>Create Polls</h2>
+    
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container1">
+            <div class="container2">
+                <div>
+                    <input class="name" formControlName="Title" type="text" placeholder="Title..."><br>
+                    <span *ngIf="form.get('Title')?.invalid && form.get('Title')?.touched"><i>Poll title is required.</i></span>
+                </div>
+                <div>
+                    <input class="name" formControlName="Options" type="text" placeholder="Options"><br>
+                    <span *ngIf="form.get('Options')?.invalid && form.get('Options')?.touched"><i>Option is required.</i></span>
+                </div>
+                <div>
+                    <textarea class="name" formControlName="Description" placeholder="Description"></textarea><br>
+                    <div *ngIf="form.get('Description')?.invalid && form.get('Description')?.touched" class="span">
+                        <p *ngIf="form.get('Description')?.hasError('required')"><i>Description is required.</i></p>
+                        <p *ngIf="form.get('Description')?.hasError('minlength')"><i>Description must contain at least 10 characters.</i></p>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="form.invalid">Create Poll</button>
+        </form>
+    </div>
+    
+    <div class="container10" *ngIf="Polls.length">
+        <h1>My Polls</h1>
+        <div class="container11" *ngFor="let poll of Polls">
+            <p>{{poll.Title}}</p>
+            <p>{{poll.Description}}</p>
+            <p>{{poll.Options}}</p>
+            <button (click)="deletePoll(poll.Id)">Delete</button>
+        </div>
+    </div>
+</body>
+</html>

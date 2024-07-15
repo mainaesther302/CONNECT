@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Table</title>
+    
+</head>
+<body>
+    <h1>Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tableData">
+                <td>Lisasabilah&#64;gmail.com</td>
+                <td>BilahLis</td>
+                <td class="actions">
+                    <button onclick="approveUser('Lisasabilah@gmail.com')">Approve</button>
+                    <button onclick="deleteUser('Lisasabilah@gmail.com')">Delete</button>
+                </td>
+            </tr>
+            <tr class="tableData">
+                <td>johnnju&#64;gmail.com</td>
+                <td>Johnte</td>
+                <td class="actions">
+                    <button onclick="approveUser('johnnju@gmail.com')">Approve</button>
+                    <button onclick="deleteUser('johnnju@gmail.com')">Delete</button>
+                </td>
+            </tr>
+            <tr class="tableData">
+                <td>imanilimo&#64;gmail.com</td>
+                <td>Limo</td>
+                <td class="actions">
+                    <button onclick="approveUser('imanilimo@gmail.com')">Approve</button>
+                    <button onclick="deleteUser('imanilimo@gmail.com')">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
